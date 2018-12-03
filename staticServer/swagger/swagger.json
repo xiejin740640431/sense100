@@ -1,0 +1,1914 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "sense100 接口文档",
+        "title": "sense100",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "740640431@qq.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.5"
+    },
+    "host": "192.168.1.104:9494",
+    "basePath": "/",
+    "paths": {
+        "/carrier/createOrUpdateCarrier": {
+            "post": {
+                "description": "创建承运商",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Carrier"
+                ],
+                "summary": "创建承运商",
+                "parameters": [
+                    {
+                        "description": "createOrUpdateCarrierReq",
+                        "name": "createOrUpdateCarrierReq",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/request.CreateOrUpdateCarrierReq"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/carrier/createOrUpdateSetMeal": {
+            "post": {
+                "description": "创建和更新套餐",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Carrier"
+                ],
+                "summary": "创建和更新套餐",
+                "parameters": [
+                    {
+                        "description": "ssSetMeal",
+                        "name": "ssSetMeal",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.SsSetMeal"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/carrier/getSetMealInfo/{carrierId}/{mouldId}": {
+            "get": {
+                "description": "根据承运商Id和模板Id获取套餐信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Carrier"
+                ],
+                "summary": "根据承运商Id和模板Id获取套餐信息",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "carrierId",
+                        "name": "carrierId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "mouldId",
+                        "name": "mouldId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/response.BaseResponseSwag"
+                            }
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/common/getSubsetRegion/{parentId}": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Common"
+                ],
+                "summary": "获取子集城市集合",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "parentId",
+                        "name": "parentId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/model.SsRegion"
+                            }
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/company/createOrUpdateFacade": {
+            "post": {
+                "description": "添加或更新企业门面信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Company"
+                ],
+                "summary": "添加或更新企业门面信息",
+                "parameters": [
+                    {
+                        "description": "ssCompanyFacadeInfo",
+                        "name": "ssCompanyFacadeInfo",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.SsCompanyFacadeInfo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/company/createOrUpdateTrade": {
+            "post": {
+                "description": "创建或更新行业类型",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Company"
+                ],
+                "summary": "创建或更新行业类型",
+                "parameters": [
+                    {
+                        "description": "trade",
+                        "name": "trade",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.SsTrade"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/company/getDynamicListPage": {
+            "post": {
+                "description": "分页获取动态",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Company"
+                ],
+                "summary": "分页获取动态",
+                "parameters": [
+                    {
+                        "description": "getDynamicListPageReq",
+                        "name": "getDynamicListPageReq",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/request.GetDynamicListPageReq"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/model.DynamicResp"
+                            }
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/company/getFacadeOnUserId/{userId}": {
+            "get": {
+                "description": "根据用户ID获取企业门面信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Company"
+                ],
+                "summary": "根据用户ID获取企业门面信息",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "userId",
+                        "name": "userId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.CompanyFacadeInfoResp"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/company/getTradesOnParentId/{parentId}": {
+            "get": {
+                "description": "根据父级Id获取行业类型集合",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Company"
+                ],
+                "summary": "根据父级Id获取行业类型集合",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "parentId",
+                        "name": "parentId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/model.SsTrade"
+                            }
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/company/publishDynamic": {
+            "post": {
+                "description": "发布动态",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Company"
+                ],
+                "summary": "发布动态",
+                "parameters": [
+                    {
+                        "description": "ssSpDynamic",
+                        "name": "ssSpDynamic",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.SsSpDynamic"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/order/submitOrder": {
+            "post": {
+                "description": "提交订单",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Order"
+                ],
+                "summary": "提交订单",
+                "parameters": [
+                    {
+                        "description": "submitOrderReq",
+                        "name": "submitOrderReq",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/request.SubmitOrderReq"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/program/createOrUpdateMould": {
+            "post": {
+                "description": "创建模板",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Program"
+                ],
+                "summary": "创建模板",
+                "parameters": [
+                    {
+                        "description": "programMould",
+                        "name": "programMould",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.SsProgramMould"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/program/createOrUpdateMouldCategory": {
+            "post": {
+                "description": "创建或更新模板类型",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Program"
+                ],
+                "summary": "创建或更新模板类型",
+                "parameters": [
+                    {
+                        "description": "mouldCategory",
+                        "name": "mouldCategory",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.SsMouldCategory"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/program/delMould/{id}": {
+            "delete": {
+                "description": "删除模板信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Program"
+                ],
+                "summary": "删除模板信息",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/program/delMouldCategory/{id}": {
+            "delete": {
+                "description": "根据Id删除类型",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Program"
+                ],
+                "summary": "根据Id删除类型",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/program/getMouldCategoryOnParentId/{parentId}": {
+            "get": {
+                "description": "根据parentId获取类型子集",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Program"
+                ],
+                "summary": "根据parentId获取类型子集",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "parentId",
+                        "name": "parentId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/program/getMouldInfo/{id}": {
+            "get": {
+                "description": "获取模板信息",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Program"
+                ],
+                "summary": "获取模板信息",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.SsProgramMould"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/program/getMouldListOnCategoryId/{categoryId}": {
+            "get": {
+                "description": "根据类型获取模板集合",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Program"
+                ],
+                "summary": "根据类型获取模板集合",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "categoryId",
+                        "name": "categoryId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/third/getWxAccessToken/{code}": {
+            "get": {
+                "description": "根据code获取微信accessToken",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Third"
+                ],
+                "summary": "根据code获取微信accessToken",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "code",
+                        "name": "code",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.WxAccessTokenResp"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/addBrowseRecord": {
+            "post": {
+                "description": "添加浏览记录",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "添加浏览记录",
+                "parameters": [
+                    {
+                        "description": "addBrowseRecordReq",
+                        "name": "addBrowseRecordReq",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.AddBrowseRecordReq"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/doPraise": {
+            "post": {
+                "description": "添加点赞记录",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "添加点赞记录",
+                "parameters": [
+                    {
+                        "description": "praise",
+                        "name": "praise",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.SsSpPraise"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/login": {
+            "post": {
+                "description": "登录 登录类型必传 手机号登录：手机号、密码必传  微信登录：微信id必传",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "登录",
+                "parameters": [
+                    {
+                        "description": "loginReq",
+                        "name": "loginReq",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/request.LoginReq"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/registerUser": {
+            "post": {
+                "description": "注册用户 注册类型必传，手机号注册：手机号、密码必传 微信注册：微信id必传",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "注册用户",
+                "parameters": [
+                    {
+                        "description": "register",
+                        "name": "registerUserReq",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/request.RegisterUserReq"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    },
+                    "400": {
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/response.BaseResponseSwag"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "model.AddBrowseRecordReq": {
+            "type": "object",
+            "required": [
+                "contentId",
+                "type"
+            ],
+            "properties": {
+                "address": {
+                    "description": "地址",
+                    "type": "string"
+                },
+                "contentId": {
+                    "description": "关联浏览内容Id，如：企业门面Id、小程序Id",
+                    "type": "integer"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "email": {
+                    "description": "邮箱",
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "integer"
+                },
+                "headUrl": {
+                    "description": "头像url",
+                    "type": "string"
+                },
+                "iD": {
+                    "description": "Id",
+                    "type": "integer"
+                },
+                "mobile": {
+                    "description": "手机号",
+                    "type": "string"
+                },
+                "nickName": {
+                    "description": "昵称",
+                    "type": "string"
+                },
+                "remarks": {
+                    "description": "备注",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "类型(1企业门面、2小程序)",
+                    "type": "integer"
+                },
+                "wxId": {
+                    "description": "微信Id",
+                    "type": "string"
+                }
+            }
+        },
+        "model.CompanyFacadeInfoResp": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "description": "企业地址",
+                    "type": "string"
+                },
+                "bannerUrls": {
+                    "description": "bannerUrl,逗号分割",
+                    "type": "string"
+                },
+                "browseNum": {
+                    "description": "浏览人数",
+                    "type": "integer"
+                },
+                "businessBeginTime": {
+                    "description": "营业开始时间",
+                    "type": "string"
+                },
+                "businessEndTime": {
+                    "description": "营业结束时间",
+                    "type": "string"
+                },
+                "companyId": {
+                    "description": "关联企业Id",
+                    "type": "integer"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "creatorId": {
+                    "type": "integer"
+                },
+                "enabled": {
+                    "type": "integer"
+                },
+                "expiryTime": {
+                    "description": "过期时间",
+                    "type": "string"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "latitude": {
+                    "description": "纬度",
+                    "type": "number"
+                },
+                "longitude": {
+                    "description": "经度",
+                    "type": "number"
+                },
+                "name": {
+                    "description": "名称",
+                    "type": "string"
+                },
+                "pictureUrls": {
+                    "description": "图片url",
+                    "type": "string"
+                },
+                "remarks": {
+                    "type": "string"
+                },
+                "rentDays": {
+                    "description": "购买天数",
+                    "type": "integer"
+                },
+                "startUseTime": {
+                    "description": "购买，开始使用时间",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "状态(-1欠费、0正常)",
+                    "type": "integer"
+                },
+                "telephone": {
+                    "description": "联系电话",
+                    "type": "string"
+                },
+                "tradeId": {
+                    "description": "关联行业类型Id",
+                    "type": "integer"
+                },
+                "updatedTime": {
+                    "type": "string"
+                },
+                "updatorId": {
+                    "type": "integer"
+                },
+                "userId": {
+                    "description": "关联用户Id",
+                    "type": "integer"
+                },
+                "videoUrl": {
+                    "description": "宣传视频url",
+                    "type": "string"
+                },
+                "visitorNumber": {
+                    "description": "访问量",
+                    "type": "integer"
+                },
+                "wxAccount": {
+                    "description": "微信账号",
+                    "type": "string"
+                }
+            }
+        },
+        "model.DynamicResp": {
+            "type": "object",
+            "properties": {
+                "companyId": {
+                    "description": "关联企业Id",
+                    "type": "integer"
+                },
+                "content": {
+                    "description": "内容",
+                    "type": "string"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "creatorId": {
+                    "type": "integer"
+                },
+                "deleteTime": {
+                    "type": "string"
+                },
+                "deletorId": {
+                    "type": "integer"
+                },
+                "enabled": {
+                    "type": "integer"
+                },
+                "facadeId": {
+                    "description": "关联门面Id",
+                    "type": "integer"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "isPraise": {
+                    "type": "boolean"
+                },
+                "pictureUrls": {
+                    "description": "图片url,逗号分割",
+                    "type": "string"
+                },
+                "praiseNum": {
+                    "type": "integer"
+                },
+                "programId": {
+                    "description": "关联小程序Id",
+                    "type": "integer"
+                },
+                "remarks": {
+                    "type": "string"
+                },
+                "state": {
+                    "description": "状态(1编辑中、2已发布、3删除)",
+                    "type": "integer"
+                },
+                "type": {
+                    "description": "动态类型(1企业门面、2小程序、3企业)",
+                    "type": "integer"
+                },
+                "userId": {
+                    "description": "用户Id",
+                    "type": "integer"
+                }
+            }
+        },
+        "model.SsCompanyFacadeInfo": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "description": "企业地址",
+                    "type": "string"
+                },
+                "bannerUrls": {
+                    "description": "bannerUrl,逗号分割",
+                    "type": "string"
+                },
+                "businessBeginTime": {
+                    "description": "营业开始时间",
+                    "type": "string"
+                },
+                "businessEndTime": {
+                    "description": "营业结束时间",
+                    "type": "string"
+                },
+                "companyId": {
+                    "description": "关联企业Id",
+                    "type": "integer"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "creatorId": {
+                    "type": "integer"
+                },
+                "enabled": {
+                    "type": "integer"
+                },
+                "expiryTime": {
+                    "description": "过期时间",
+                    "type": "string"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "latitude": {
+                    "description": "纬度",
+                    "type": "number"
+                },
+                "longitude": {
+                    "description": "经度",
+                    "type": "number"
+                },
+                "name": {
+                    "description": "名称",
+                    "type": "string"
+                },
+                "pictureUrls": {
+                    "description": "图片url",
+                    "type": "string"
+                },
+                "remarks": {
+                    "type": "string"
+                },
+                "rentDays": {
+                    "description": "购买天数",
+                    "type": "integer"
+                },
+                "startUseTime": {
+                    "description": "购买，开始使用时间",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "状态(-1欠费、0正常)",
+                    "type": "integer"
+                },
+                "telephone": {
+                    "description": "联系电话",
+                    "type": "string"
+                },
+                "tradeId": {
+                    "description": "关联行业类型Id",
+                    "type": "integer"
+                },
+                "updatedTime": {
+                    "type": "string"
+                },
+                "updatorId": {
+                    "type": "integer"
+                },
+                "userId": {
+                    "description": "关联用户Id",
+                    "type": "integer"
+                },
+                "videoUrl": {
+                    "description": "宣传视频url",
+                    "type": "string"
+                },
+                "visitorNumber": {
+                    "description": "访问量",
+                    "type": "integer"
+                },
+                "wxAccount": {
+                    "description": "微信账号",
+                    "type": "string"
+                }
+            }
+        },
+        "model.SsMouldCategory": {
+            "type": "object",
+            "required": [
+                "categoryName"
+            ],
+            "properties": {
+                "categoryName": {
+                    "description": "类型名称",
+                    "type": "string"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "creatorId": {
+                    "description": "管理员Id",
+                    "type": "integer"
+                },
+                "enabled": {
+                    "type": "integer"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "parentId": {
+                    "description": "关联父级Id",
+                    "type": "integer"
+                },
+                "remarks": {
+                    "type": "string"
+                },
+                "updatedTime": {
+                    "type": "string"
+                },
+                "updatorId": {
+                    "description": "管理员Id",
+                    "type": "integer"
+                }
+            }
+        },
+        "model.SsProgramMould": {
+            "type": "object",
+            "required": [
+                "categoryId",
+                "name",
+                "description",
+                "salePrice",
+                "status",
+                "coverUrl",
+                "detailPictureUrls"
+            ],
+            "properties": {
+                "categoryId": {
+                    "type": "integer"
+                },
+                "coverUrl": {
+                    "description": "封面url",
+                    "type": "string"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "creatorId": {
+                    "description": "管理员Id",
+                    "type": "integer"
+                },
+                "description": {
+                    "description": "描述",
+                    "type": "string"
+                },
+                "detailPictureUrls": {
+                    "description": "详情图url,逗号分割",
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "integer"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "marketPrice": {
+                    "description": "市场价",
+                    "type": "number"
+                },
+                "name": {
+                    "description": "名称",
+                    "type": "string"
+                },
+                "remarks": {
+                    "type": "string"
+                },
+                "salePrice": {
+                    "description": "售价",
+                    "type": "number"
+                },
+                "sourceUrl": {
+                    "description": "源码url",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "状态(1开发中、2已完成)",
+                    "type": "integer"
+                },
+                "updatedTime": {
+                    "type": "string"
+                },
+                "updatorId": {
+                    "description": "管理员Id",
+                    "type": "integer"
+                }
+            }
+        },
+        "model.SsRegion": {
+            "type": "object",
+            "properties": {
+                "cityCode": {
+                    "type": "string"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "lat": {
+                    "type": "number"
+                },
+                "levelType": {
+                    "type": "integer"
+                },
+                "lng": {
+                    "type": "number"
+                },
+                "mergerName": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "parentId": {
+                    "type": "integer"
+                },
+                "pinyin": {
+                    "type": "string"
+                },
+                "postCode": {
+                    "type": "string"
+                },
+                "shortName": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.SsSetMeal": {
+            "type": "object",
+            "required": [
+                "carrierId",
+                "mouldId",
+                "name",
+                "coverUrl",
+                "creatorId"
+            ],
+            "properties": {
+                "carrierId": {
+                    "description": "承运商Id",
+                    "type": "integer"
+                },
+                "coverUrl": {
+                    "description": "封面url",
+                    "type": "string"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "creatorId": {
+                    "type": "integer"
+                },
+                "description": {
+                    "description": "套餐描述",
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "integer"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "mealRoles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/model.SsSetMealRole"
+                    }
+                },
+                "mouldId": {
+                    "description": "模版Id",
+                    "type": "integer"
+                },
+                "name": {
+                    "description": "套餐名称",
+                    "type": "string"
+                },
+                "remarks": {
+                    "type": "string"
+                },
+                "updatedTime": {
+                    "type": "string"
+                },
+                "updatorId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "model.SsSetMealRole": {
+            "type": "object",
+            "required": [
+                "setMealId",
+                "name",
+                "salePrice",
+                "pictureUrl",
+                "creatorId"
+            ],
+            "properties": {
+                "createdTime": {
+                    "type": "string"
+                },
+                "creatorId": {
+                    "type": "integer"
+                },
+                "description": {
+                    "description": "描述",
+                    "type": "string"
+                },
+                "enabled": {
+                    "type": "integer"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "name": {
+                    "description": "名称",
+                    "type": "string"
+                },
+                "originalPrice": {
+                    "description": "原价",
+                    "type": "number"
+                },
+                "pictureUrl": {
+                    "description": "图片url",
+                    "type": "string"
+                },
+                "remarks": {
+                    "type": "string"
+                },
+                "salePrice": {
+                    "description": "销售价",
+                    "type": "number"
+                },
+                "setMealId": {
+                    "description": "关联套餐Id",
+                    "type": "integer"
+                },
+                "updatedTime": {
+                    "type": "string"
+                },
+                "updatorId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "model.SsSpDynamic": {
+            "type": "object",
+            "properties": {
+                "companyId": {
+                    "description": "关联企业Id",
+                    "type": "integer"
+                },
+                "content": {
+                    "description": "内容",
+                    "type": "string"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "creatorId": {
+                    "type": "integer"
+                },
+                "deleteTime": {
+                    "type": "string"
+                },
+                "deletorId": {
+                    "type": "integer"
+                },
+                "enabled": {
+                    "type": "integer"
+                },
+                "facadeId": {
+                    "description": "关联门面Id",
+                    "type": "integer"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "pictureUrls": {
+                    "description": "图片url,逗号分割",
+                    "type": "string"
+                },
+                "programId": {
+                    "description": "关联小程序Id",
+                    "type": "integer"
+                },
+                "remarks": {
+                    "type": "string"
+                },
+                "state": {
+                    "description": "状态(1编辑中、2已发布、3删除)",
+                    "type": "integer"
+                },
+                "type": {
+                    "description": "动态类型(1企业门面、2小程序、3企业)",
+                    "type": "integer"
+                },
+                "userId": {
+                    "description": "用户Id",
+                    "type": "integer"
+                }
+            }
+        },
+        "model.SsSpPraise": {
+            "type": "object",
+            "properties": {
+                "createdTime": {
+                    "description": "创建时间",
+                    "type": "string"
+                },
+                "enabled": {
+                    "description": "0禁用、1启用",
+                    "type": "integer"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "praiseContentId": {
+                    "description": "关联点赞内容Id,如:关联点赞动态Id",
+                    "type": "integer"
+                },
+                "type": {
+                    "description": "类型(1点赞动态、2点赞资讯)",
+                    "type": "integer"
+                },
+                "userId": {
+                    "description": "关联用户Id",
+                    "type": "integer"
+                }
+            }
+        },
+        "model.SsTrade": {
+            "type": "object",
+            "required": [
+                "parentId",
+                "name",
+                "creatorId"
+            ],
+            "properties": {
+                "createdTime": {
+                    "type": "string"
+                },
+                "creatorId": {
+                    "description": "管理员Id",
+                    "type": "integer"
+                },
+                "enabled": {
+                    "type": "integer"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "name": {
+                    "description": "名称",
+                    "type": "string"
+                },
+                "parentId": {
+                    "description": "关联父级id",
+                    "type": "integer"
+                },
+                "remarks": {
+                    "type": "string"
+                },
+                "updatedTime": {
+                    "type": "string"
+                },
+                "updatorId": {
+                    "description": "管理员Id",
+                    "type": "integer"
+                }
+            }
+        },
+        "request.CreateOrUpdateCarrierReq": {
+            "type": "object",
+            "required": [
+                "adminId",
+                "name",
+                "companyName",
+                "contactPerson",
+                "contactPhone",
+                "legalPersonName",
+                "legalPersonIdCard",
+                "legalPersonPhone",
+                "legalPersonEmail",
+                "idCardPositivePicUrl",
+                "idCardInsteadPicUrl",
+                "idCardHeadPositivePicUrl",
+                "businessLicensePicUrl",
+                "organizationPicUrl"
+            ],
+            "properties": {
+                "adminId": {
+                    "description": "管理员Id",
+                    "type": "integer"
+                },
+                "businessLicensePicUrl": {
+                    "type": "string"
+                },
+                "companyName": {
+                    "description": "企业名称",
+                    "type": "string"
+                },
+                "contactEmail": {
+                    "description": "联系邮箱",
+                    "type": "string"
+                },
+                "contactPerson": {
+                    "description": "联系人姓名",
+                    "type": "string"
+                },
+                "contactPhone": {
+                    "description": "联系电话",
+                    "type": "string"
+                },
+                "iD": {
+                    "type": "integer"
+                },
+                "idCardHeadPositivePicUrl": {
+                    "type": "string"
+                },
+                "idCardInsteadPicUrl": {
+                    "description": "身份证",
+                    "type": "string"
+                },
+                "idCardPositivePicUrl": {
+                    "description": "身份证正面照",
+                    "type": "string"
+                },
+                "legalPersonEmail": {
+                    "description": "法人联系邮箱",
+                    "type": "string"
+                },
+                "legalPersonIdCard": {
+                    "description": "法人身份证",
+                    "type": "string"
+                },
+                "legalPersonName": {
+                    "description": "法人姓名",
+                    "type": "string"
+                },
+                "legalPersonPhone": {
+                    "description": "法人联系电话",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "名称",
+                    "type": "string"
+                },
+                "organizationPicUrl": {
+                    "type": "string"
+                }
+            }
+        },
+        "request.GetDynamicListPageReq": {
+            "type": "object",
+            "properties": {
+                "companyId": {
+                    "description": "企业Id",
+                    "type": "integer"
+                },
+                "facadeId": {
+                    "description": "门面id",
+                    "type": "integer"
+                },
+                "isPage": {
+                    "description": "是否分页",
+                    "type": "boolean"
+                },
+                "pageIndex": {
+                    "description": "页面索引",
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "description": "页面数据个数",
+                    "type": "integer"
+                },
+                "programId": {
+                    "description": "小程序Id",
+                    "type": "integer"
+                },
+                "userId": {
+                    "description": "用户Id，没有可以不传",
+                    "type": "integer"
+                }
+            }
+        },
+        "request.LoginReq": {
+            "type": "object",
+            "required": [
+                "loginType"
+            ],
+            "properties": {
+                "loginType": {
+                    "description": "登录类型(1:手机号,2:微信)",
+                    "type": "integer"
+                },
+                "password": {
+                    "description": "密码(md5加密)",
+                    "type": "string"
+                },
+                "userName": {
+                    "description": "用户名",
+                    "type": "string"
+                },
+                "wxId": {
+                    "description": "微信id",
+                    "type": "string"
+                }
+            }
+        },
+        "request.RegisterUserReq": {
+            "type": "object",
+            "properties": {
+                "headUrl": {
+                    "description": "头像url",
+                    "type": "string"
+                },
+                "ipAddress": {
+                    "description": "ip地址",
+                    "type": "string"
+                },
+                "mobile": {
+                    "description": "手机号",
+                    "type": "string"
+                },
+                "nickName": {
+                    "description": "昵称",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "密码",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "1:手机号，2:微信",
+                    "type": "integer"
+                },
+                "wxId": {
+                    "description": "微信id",
+                    "type": "string"
+                }
+            }
+        },
+        "request.SubmitOrderReq": {
+            "type": "object",
+            "required": [
+                "userId",
+                "setMealRoleId",
+                "transactionContent",
+                "orderSource",
+                "telephone",
+                "address"
+            ],
+            "properties": {
+                "address": {
+                    "description": "联系地址",
+                    "type": "string"
+                },
+                "demand": {
+                    "description": "需求",
+                    "type": "string"
+                },
+                "invitationTelephone": {
+                    "description": "邀请人联系电话",
+                    "type": "string"
+                },
+                "orderSource": {
+                    "description": "订单来源(1官网、2微信小程序)",
+                    "type": "integer"
+                },
+                "setMealRoleId": {
+                    "description": "关联套餐规则Id",
+                    "type": "integer"
+                },
+                "telephone": {
+                    "description": "联系电话",
+                    "type": "string"
+                },
+                "transactionContent": {
+                    "description": "交易内容",
+                    "type": "integer"
+                },
+                "userId": {
+                    "description": "用户Id",
+                    "type": "integer"
+                }
+            }
+        },
+        "response.BaseResponseSwag": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "description": "状态码",
+                    "type": "integer"
+                },
+                "data": {
+                    "description": "数据jsonObject",
+                    "type": "string"
+                },
+                "message": {
+                    "description": "状态消息",
+                    "type": "string"
+                }
+            }
+        },
+        "response.WxAccessTokenResp": {
+            "type": "object",
+            "properties": {
+                "openId": {
+                    "type": "string"
+                },
+                "sessionKey": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

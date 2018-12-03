@@ -1,0 +1,10 @@
+{
+  "Server": "http://localhost:9494",
+  "ImageServer": "http://localhost:9494/static/images",
+  "StaticServer": "http://localhost:9494/static",
+  "RuntimeModel": "dev",
+  "LogLevel": "debug",
+  "mysql": "root:root!@#$@(192.168.3.3:3306)/sm_program?charset=utf8mb4&parseTime=true&loc=Local",
+  "Port": ":9494",
+  "SwaggerJson": "swagger.json"
+}
